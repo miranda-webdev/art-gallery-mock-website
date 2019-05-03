@@ -1,0 +1,12 @@
+html, body {
+    background-color: #AEB0A1;
+    background-image: url(./images/alex-mihis-33693-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+} */
