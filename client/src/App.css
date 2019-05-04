@@ -6,14 +6,57 @@
 #6B3833
 */
 
-.App {
-    /* width: 100%; */
+/* Navbar styling */
+.main-nav {
+    border-bottom: 1px solid rgba(174, 176, 161, .4);
+}
+
+.main-nav button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.main-nav ul {
+    list-style-type: none;
+}
+
+.main-nav .nav-link {
+    color: #ffffff;
+    padding: 20px 25px;
+    text-decoration: none;
+    line-height: 3;
+}
+
+.main-nav .nav-link:hover {
+    background-color: rgba(174, 176, 161, .4);
+}
+
+.main-nav .icon {
+    display: block;
+}
+
+.main-nav .fa-bars {
+    color: #ffffff;
+}
+
+.nav-menu-toggle {
+    display: none;
+}
+
+.nav-menu-toggle.responsive {
+    display: block;
+}
+
+
+/* LandingPage styling */
+
+.LandingPage {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 }
 
-.App-intro-container {
+.LandingPage-intro-container {
     grid-column: 1 / 1;
     text-align: right;
     padding: 1em;
@@ -22,36 +65,65 @@
     background-color: rgba(174, 176, 161, .4);
 }
 
-.App-header {
+.LandingPage-header {
     color: #6B3833;
 }
 
-.App-subheader {
+.LandingPage-subheader {
     color: #ffffff;
     font-size: 1em;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-
-/* Navbar styling */
-.main-nav {
-    border-bottom: 1px solid #ffffff;
-}
-
-.main-nav ul {
-    list-style: none;
-}
-
-.main-nav .nav-link {
+.LandingPage-btn {
+    background-color: #D27056;
+    border: none;
+    border-radius: 25px;
     color: #ffffff;
-    height: 40px;
-    margin: 10px 15px 10px 15px;
+    cursor: pointer;
+    margin: auto;
+    padding: 15px 32px;
+    font-size: 16px;
     text-decoration: none;
-    line-height: 1.6;
 }
 
-.main-nav .nav-link:hover {
-    background-color: rgba(174, 176, 161, .4);
+
+
+@media screen and (min-width: 768px) {
+    /* Navbar styling */
+    .main-nav ul li {
+        display: inline;
+    }
+
+    .main-nav .icon {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px){
+     /* LandingPage styling */
+     .LandingPage {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .LandingPage-intro-container {
+        grid-column: 3 / 4;
+    }
+
+    .LandingPage-header {
+        margin-top: 15%;
+    }
+
+    .LandingPage-subheader {
+        margin-top: 40%;
+    }
+
+    .LandingPage-btn{
+        grid-column: 2 / 3;
+    }
+
 }
 
 
