@@ -175,13 +175,14 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 1em;
-    padding: 1em;
+    padding-top: 1em;
 }
 
 .Contact-header, 
 .Contact-info,
-.Contact-ad {
+.Contact-ad-info{
     text-align: center;
+    min-width: 100%;
 }
 
 .Contact-link:link,
