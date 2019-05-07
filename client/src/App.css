@@ -7,9 +7,6 @@
 */
 
 /* Navbar styling */
-.main-nav {
-    border-bottom: 1px solid rgba(179, 0, 0, .4);
-}
 
 .main-nav button {
     background-color: transparent;
@@ -43,7 +40,7 @@
 
 .main-nav .yellow.nav-link:hover, 
 .yellowDiv{
-    background-color: rgba(204, 163, 0, .4);
+    background-color: rgba(204, 163, 0, .6);
     border: 5px solid rgb(204, 163, 0);
     color: #ffffff;
 }
@@ -153,6 +150,27 @@
     padding: 1em;
 }
 
+.Art {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1em; 
+}
+
+.Art-img {
+    width: 90%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+.Art-img img{
+    width: 100%;
+}
+
+/* .Art-img {
+    padding: 1em;
+} */
+
 /* Responsive Media Queries*/
 @media screen and (min-width: 768px) {
     /* Navbar styling */
@@ -176,6 +194,13 @@
 
     /* About Page Styling */
     
+    /* Art Page Styling */
+    .Art {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1em; 
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -248,7 +273,7 @@
 
 /* Animations */
 @keyframes yellowDiv {
-    from {background-color: rgba(204, 163, 0, .9);;}
+    from {background-color: rgba(204, 163, 0, .6);}
     to {background-color: rgb(204, 163, 0);}
 }
 
