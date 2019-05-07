@@ -5,9 +5,15 @@ function About() {
         <div className="About">
             <div className="About--img-container">
                <img src={require('../images/max-van-den-oetelaar-1150510-unsplash.jpg')} alt=""/>
-            </div>
-            <div>
-               Lorem laborum non proident nostrud excepteur quis labore dolor. Irure excepteur non et nisi labore deserunt consectetur ipsum do pariatur culpa aute nisi. Et eu occaecat tempor aute id sunt amet dolore esse labore excepteur elit id aliqua.
+               <div className="About--text-top redDiv">
+                    Et sit nostrud Lorem eiusmod aute nulla eiusmod ut velit in deserunt minim aliqua. Lorem anim ea esse enim enim sit nostrud. Excepteur mollit eu ea fugiat minim nostrud officia. Laborum sit dolore sunt commodo commodo sit minim labore velit. Adipisicing sint proident excepteur officia occaecat. 
+                </div>
+                <div className="About--text-right blueDiv">
+                    Et sit nostrud Lorem eiusmod aute nulla eiusmod ut velit in deserunt minim aliqua. Lorem anim ea esse enim enim sit nostrud. Excepteur mollit eu ea fugiat minim nostrud officia. Laborum sit dolore sunt commodo commodo sit minim labore velit. Adipisicing sint proident excepteur officia occaecat. 
+                </div>
+                <div className="About--text-left yellowDiv">
+                    Et sit nostrud Lorem eiusmod aute nulla eiusmod ut velit in deserunt minim aliqua. Lorem anim ea esse enim enim sit nostrud. Excepteur mollit eu ea fugiat minim nostrud officia. Laborum sit dolore sunt commodo commodo sit minim labore velit. Adipisicing sint proident excepteur officia occaecat. 
+                </div>
             </div>
         </div>
     )

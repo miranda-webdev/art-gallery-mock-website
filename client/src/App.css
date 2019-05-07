@@ -27,18 +27,24 @@
     line-height: 3;
 }
 
-.main-nav .red.nav-link:hover {
-    background-color: rgba(179, 0, 0, .2);
+.main-nav .red.nav-link:hover, 
+.redDiv {
+    background-color: rgba(179, 0, 0, .4);
+    border: 5px solid rgb(179, 0, 0);
     color: #ffffff;
 }
 
-.main-nav .blue.nav-link:hover {
+.main-nav .blue.nav-link:hover, 
+.blueDiv {
+    border: 5px solid #000099;
     background-color: rgba(0, 0, 153, .4);
     color: #ffffff;
 }
 
-.main-nav .yellow.nav-link:hover {
-    background-color: rgba(230, 184, 0, .7);
+.main-nav .yellow.nav-link:hover, 
+.yellowDiv{
+    background-color: rgba(204, 163, 0, .4);
+    border: 5px solid rgb(204, 163, 0);
     color: #ffffff;
 }
 
@@ -81,13 +87,12 @@
 
 .LandingPage--img-container {
     width: 250px;
-    background-color: rgba(179, 0, 0, .3);
-    border: 5px solid rgb(179, 0, 0);
     margin-top: 1em;
     margin: auto;
 }
 
-.LandingPage--img-container:hover {
+.LandingPage--img-container:hover, 
+.About--text-top:hover {
     animation: redDiv 1s;
     animation-fill-mode: forwards;
 }
@@ -101,38 +106,29 @@
     text-align: right;
     padding: 1em;
     margin: 1em;
-    border: 5px solid #000099;
-    background-color: rgba(0, 0, 153, .4);
 }
 
-.LandingPage-intro-container:hover {
+.LandingPage-intro-container:hover, 
+.About--text-right:hover {
     animation: blueDiv 1s;
     animation-fill-mode: forwards;
 }
 
-.LandingPage-header {
-    color: #ffffff;
-}
-
-.LandingPage-subheader, .LandingPage-paragraph {
-    color: #ffffff;
+.LandingPage-subheader, 
+.LandingPage-paragraph {
     font-size: 1em;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .LandingPage-btn {
-    background-color: rgba(230, 184, 0, .7);
-    border: 2px solid #cca300;
-    color: #ffffff;
     cursor: pointer;
     margin: auto;
     padding: 15px 32px;
     font-size: 24px;
     text-decoration: none;
-    
 }
-.LandingPage-btn:hover {
-    /* background-color: rgb(230, 184, 0); */
+.LandingPage-btn:hover, 
+.About--text-left:hover {
     animation: yellowDiv 1s;
     animation-fill-mode: forwards;
 }
@@ -151,7 +147,13 @@
     width: 100%;
  }
 
-/* Responsive */
+.About--text-top, 
+.About--text-left, 
+.About--text-right {
+    padding: 1em;
+}
+
+/* Responsive Media Queries*/
 @media screen and (min-width: 768px) {
     /* Navbar styling */
     .main-nav ul li {
@@ -171,9 +173,13 @@
         width: 500px;
         margin: auto;
     }
+
+    /* About Page Styling */
+    
 }
 
 @media screen and (min-width: 1024px){
+
      /* LandingPage styling */
      .LandingPage-container {
         display: grid;
@@ -201,12 +207,49 @@
         margin-top: 1em;
     }
 
+    /* About Page styling */
+    .About--img-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row: 1em;
+     }
+
+     .About--img-container img {
+         grid-column: 2 / 5;
+         grid-row: 2 / 4;
+     }
+     
+     .About--text-top {
+         grid-column: 1 / 6;
+         font-size: 1.5em;
+     }
+
+     .About--text-right {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+        font-size: 1.5em;
+     }
+
+     .About--text-left {
+        grid-column: 5 / 6;
+        grid-row: 2 / 4;
+        font-size: 1.5em;
+     }
+}
+
+@media screen and (min-width: 1125px){
+    .About--text-top, 
+    .About--text-left,
+    .About--text-right {
+        font-size: 1.3987498em;
+    }
 }
 
 /* Animations */
 @keyframes yellowDiv {
-    from {background-color: rgba(230, 184, 0, .7);}
-    to {background-color: rgb(230, 184, 0);}
+    from {background-color: rgba(204, 163, 0, .9);;}
+    to {background-color: rgb(204, 163, 0);}
 }
 
 @keyframes blueDiv {

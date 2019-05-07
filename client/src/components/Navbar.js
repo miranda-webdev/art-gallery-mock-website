@@ -12,6 +12,7 @@ class Navbar extends React.Component {
         this.state = {
             menu_class: 'nav-menu-toggle',
             link_color_class: 'nav-link',
+            color: '',
             colors: ['red', 'blue', 'yellow']
         }
     }
@@ -31,9 +32,13 @@ class Navbar extends React.Component {
 
     addColorHandler = () => {
         let color = Math.floor(Math.random() * 3);
+     
         this.setState({
+            color: this.state.colors[color],
             link_color_class: this.state.colors[color] + " nav-link"
         })
+    
+        
     }
     
     render(){
