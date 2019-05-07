@@ -54,7 +54,7 @@ class Navbar extends React.Component {
                     <Route exact path="/" component={LandingPage}/>
                     <Route path="/about/" component={About} />
                     <Route path="/art/" component={Art} />
-                    <Router path="/contact/" component={Contact}/>
+                    <Route path="/contact/" component={Contact}/>
                 </div>
             </Router>
         )

@@ -8,7 +8,7 @@
 
 /* Navbar styling */
 .main-nav {
-    border-bottom: 1px solid rgba(174, 176, 161, .4);
+    border-bottom: 1px solid rgba(179, 0, 0, .4);
 }
 
 .main-nav button {
@@ -21,14 +21,14 @@
 }
 
 .main-nav .nav-link {
-    color: #ffffff;
+    color: #800000;
     padding: 20px 25px;
     text-decoration: none;
     line-height: 3;
 }
 
 .main-nav .nav-link:hover {
-    background-color: rgba(174, 176, 161, .4);
+    background-color: rgba(179, 0, 0, .2);
 }
 
 .main-nav .icon {
@@ -36,7 +36,7 @@
 }
 
 .main-nav .fa-bars {
-    color: #ffffff;
+    color: #800000;
 }
 
 .nav-menu-toggle {
@@ -51,9 +51,28 @@
 /* LandingPage styling */
 
 .LandingPage {
+    background-image: url('./images/steve-johnson-709266-unsplash.jpg');
+    /* background-size: cover; */
+    height: 100%;
+}
+
+.LandingPage-container {
+    padding-top: 1em;
+    padding-bottom: 1em;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+}
+
+.LandingPage--img-container {
+    width: 250px;
+    background-color: rgba(179, 0, 0, .3);
+    border: 5px solid #800000;
+    margin-top: 1em;
+    margin: auto;
+}
+.LandingPage--img-container img {
+    width: 100%;
 }
 
 .LandingPage-intro-container {
@@ -61,24 +80,23 @@
     text-align: right;
     padding: 1em;
     margin: 1em;
-    border: 5px solid #333D4F;
-    background-color: rgba(174, 176, 161, .4);
+    border: 5px solid #000099;
+    background-color: rgba(0, 0, 153, .4);
 }
 
 .LandingPage-header {
-    color: #6B3833;
+    color: #ffffff;
 }
 
-.LandingPage-subheader {
+.LandingPage-subheader, .LandingPage-paragraph {
     color: #ffffff;
     font-size: 1em;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .LandingPage-btn {
-    background-color: #D27056;
-    border: none;
-    border-radius: 25px;
+    background-color: #e6b800;
+    border: 2px solid #cca300;
     color: #ffffff;
     cursor: pointer;
     margin: auto;
@@ -87,8 +105,21 @@
     text-decoration: none;
 }
 
+/* About Page */
+.About {
+    min-height: 100vh;
+    background-color: #F2EFEB;
+}
 
+.About--img-container {
+   width: 100%;
+}
 
+.About--img-container img{
+    width: 100%;
+ }
+
+/* Responsive */
 @media screen and (min-width: 768px) {
     /* Navbar styling */
     .main-nav ul li {
@@ -102,30 +133,40 @@
     .nav-menu-toggle {
         display: block;
     }
+
+    /* Landing Page styling */
+    .LandingPage--img-container {
+        width: 500px;
+        margin: auto;
+    }
 }
 
 @media screen and (min-width: 1024px){
      /* LandingPage styling */
-     .LandingPage {
+     .LandingPage-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
     }
 
+    .LandingPage--img-container {
+        grid-column: 1 / 2;
+        width: 280px;
+        margin: auto;
+    }
+
     .LandingPage-intro-container {
-        grid-column: 3 / 4;
+        grid-column: 2 / 4;
     }
 
     .LandingPage-header {
-        margin-top: 15%;
-    }
-
-    .LandingPage-subheader {
-        margin-top: 40%;
+        margin-top: 10%;
     }
 
     .LandingPage-btn{
         grid-column: 2 / 3;
+        font-size: 24px;
+        margin-top: 2em;
     }
 
 }
