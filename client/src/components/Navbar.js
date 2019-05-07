@@ -10,7 +10,9 @@ class Navbar extends React.Component {
     constructor(){
         super();
         this.state = {
-            menu_class: 'nav-menu-toggle'
+            menu_class: 'nav-menu-toggle',
+            link_color_class: 'nav-link',
+            colors: ['red', 'blue', 'yellow']
         }
     }
 
@@ -26,6 +28,13 @@ class Navbar extends React.Component {
             });
         }
     }
+
+    addColorHandler = () => {
+        let color = Math.floor(Math.random() * 3);
+        this.setState({
+            link_color_class: this.state.colors[color] + " nav-link"
+        })
+    }
     
     render(){
         return (
@@ -37,16 +46,16 @@ class Navbar extends React.Component {
                         </button>
                         <ul className={this.state.menu_class}>
                             <li>
-                                <Link to="/" className="nav-link" onClick={this.activeLink}>Home</Link>
+                                <Link to="/" className={this.state.link_color_class} onMouseOver={this.addColorHandler}>Home</Link>
                             </li>
                             <li>
-                                <Link to="/about/" className="nav-link">About</Link>
+                                <Link to="/about/" className={this.state.link_color_class} onMouseOver={this.addColorHandler}>About</Link>
                             </li>
                             <li>
-                                <Link to="/art/" className="nav-link">Art</Link>
+                                <Link to="/art/" className={this.state.link_color_class} onMouseOver={this.addColorHandler}>Art</Link>
                             </li>
                             <li>
-                                <Link to="/contact/" className="nav-link">Contact</Link>
+                                <Link to="/contact/" className={this.state.link_color_class} onMouseOver={this.addColorHandler}>Contact</Link>
                             </li>
                         </ul>
                     </nav>
