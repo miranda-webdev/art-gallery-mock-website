@@ -34,9 +34,7 @@ class Navbar extends React.Component {
      
         this.setState({
             link_color_class: this.state.colors[color] + " nav-link"
-        })
-    
-        
+        }) 
     }
     
     render(){

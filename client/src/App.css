@@ -1,11 +1,3 @@
-/* 
-#333D4F
-#AEB0A1
-#F2EFEB
-#D27056
-#6B3833
-*/
-
 /* Navbar styling */
 
 .main-nav button {
@@ -89,7 +81,8 @@
 }
 
 .LandingPage--img-container:hover, 
-.About--text-top:hover {
+.About--text-top:hover,
+.Contact-div:hover {
     animation: redDiv 1s;
     animation-fill-mode: forwards;
 }
@@ -106,7 +99,8 @@
 }
 
 .LandingPage-intro-container:hover, 
-.About--text-right:hover {
+.About--text-right:hover,
+.Contact-ad:hover {
     animation: blueDiv 1s;
     animation-fill-mode: forwards;
 }
@@ -167,9 +161,34 @@
     width: 100%;
 }
 
-/* .Art-img {
+/* Contact Page styling */
+
+.Contact {
+    background-image: url(./images/steve-johnson-1208417-unsplash.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    width: 100%;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1em;
     padding: 1em;
-} */
+}
+
+.Contact-header, 
+.Contact-info,
+.Contact-ad {
+    text-align: center;
+}
+
+.Contact-link:link,
+.Contact-link:visited {
+    color: #ffffff;
+} 
+
 
 /* Responsive Media Queries*/
 @media screen and (min-width: 768px) {
@@ -261,6 +280,21 @@
         grid-row: 2 / 4;
         font-size: 1.5em;
      }
+
+     /* Contact Page Styling */
+     .Contact {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: auto auto;
+     }
+
+     .Contact-div {
+         grid-column: 2 / 3;
+         grid-row: 2 / 3;
+     }
+
+     .Contact-ad {
+         grid-column: 1 / 2;
+     }
 }
 
 @media screen and (min-width: 1125px){
@@ -286,6 +320,3 @@
     from {background-color: rgba(179, 0, 0, .3);}
     to {background-color: rgb(179, 0, 0);}
 }
-
-
-
