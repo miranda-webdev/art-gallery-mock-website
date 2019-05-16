@@ -264,17 +264,18 @@
 
   .About--img-container img {
     grid-column: 4 / 6;
-    grid-row: 1 / 2;
+    grid-row: 3 / 4;
   }
 
   .About--text-top {
     grid-column: 1 / 6;
+    grid-row: 1 / 2;
     font-size: 1.5em;
   }
 
   .About--text-left {
     grid-column: 1 / 4;
-    grid-row: 1 / 2;
+    grid-row: 3 / 4;
     font-size: 1.5em;
     display: flex;
     align-items: center;
@@ -303,10 +304,12 @@
   .Contact-div {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    margin: 1em;
   }
 
   .Contact-ad {
     grid-column: 1 / 2;
+    margin: 1em;
   }
 }
 
@@ -339,4 +342,23 @@
   to {
     background-color: rgb(179, 0, 0);
   }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
