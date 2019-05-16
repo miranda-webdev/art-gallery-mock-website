@@ -1,3 +1,18 @@
+/* General styling */
+.redDiv {
+  background-color: rgb(179, 0, 0);
+  color: #ffffff;
+}
+
+.yellowDiv {
+  background-color: rgb(204, 163, 0);
+  color: #ffffff;
+}
+
+.blueDiv {
+  background-color: #000099;
+  color: #ffffff;
+}
 /* Navbar styling */
 
 .main-nav button {
@@ -18,22 +33,19 @@
   margin: 5px;
 }
 
-.main-nav .red.nav-link:hover,
-.redDiv {
+.main-nav .red.nav-link:hover {
   background-color: rgba(179, 0, 0, 0.5);
   border: 5px solid rgb(179, 0, 0);
   color: #ffffff;
 }
 
-.main-nav .blue.nav-link:hover,
-.blueDiv {
+.main-nav .blue.nav-link:hover{
   border: 5px solid #000099;
   background-color: rgba(0, 0, 153, 0.5);
   color: #ffffff;
 }
 
-.main-nav .yellow.nav-link:hover,
-.yellowDiv {
+.main-nav .yellow.nav-link:hover{
   background-color: rgba(204, 163, 0, 0.7);
   border: 5px solid rgb(204, 163, 0);
   color: #ffffff;
@@ -288,36 +300,6 @@
 }
 
 /* Animations */
-@keyframes yellowDiv {
-  from {
-    background-color: rgba(204, 163, 0, 0.7);
-  }
-
-  to {
-    background-color: rgb(204, 163, 0);
-  }
-}
-
-@keyframes blueDiv {
-  from {
-    background-color: rgba(0, 0, 153, 0.5);
-  }
-
-  to {
-    background-color: rgb(0, 0, 153);
-  }
-}
-
-@keyframes redDiv {
-  from {
-    background-color: rgba(179, 0, 0, 0.5);
-  }
-
-  to {
-    background-color: rgb(179, 0, 0);
-  }
-}
-
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -336,19 +318,3 @@
   -webkit-animation: fadeInDown 1s;
   animation: fadeInDown 1s;
 }
-
-.Contact-div:hover {
-  animation: redDiv 1s;
-  animation-fill-mode: forwards;
-}
-
-/* .LandingPage-intro-container:hover, */
-.Contact-ad:hover {
-  animation: blueDiv 1s;
-  animation-fill-mode: forwards;
-}
-
-/* .LandingPage-btn:hover {
-  animation: yellowDiv 1s;
-  animation-fill-mode: forwards;
-} */
