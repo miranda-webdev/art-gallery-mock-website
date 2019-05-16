@@ -337,19 +337,18 @@
   animation: fadeInDown 1s;
 }
 
-.LandingPage--img-container:hover,
 .Contact-div:hover {
   animation: redDiv 1s;
   animation-fill-mode: forwards;
 }
 
-.LandingPage-intro-container:hover,
+/* .LandingPage-intro-container:hover, */
 .Contact-ad:hover {
   animation: blueDiv 1s;
   animation-fill-mode: forwards;
 }
 
-.LandingPage-btn:hover {
+/* .LandingPage-btn:hover {
   animation: yellowDiv 1s;
   animation-fill-mode: forwards;
-}
+} */
