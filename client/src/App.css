@@ -1,323 +1,342 @@
 /* Navbar styling */
 
 .main-nav button {
-    background-color: transparent;
-    border-color: transparent;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .main-nav ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .main-nav .nav-link {
-    color: #333;
-    padding: 20px 25px;
-    text-decoration: none;
-    line-height: 3;
+  color: #333;
+  padding: 20px 25px;
+  text-decoration: none;
+  line-height: 3;
+  border: 5px solid transparent;
+  margin: 5px;
 }
 
-.main-nav .red.nav-link:hover, 
+.main-nav .red.nav-link:hover,
 .redDiv {
-    background-color: rgba(179, 0, 0, .4);
-    border: 5px solid rgb(179, 0, 0);
-    color: #ffffff;
+  background-color: rgba(179, 0, 0, 0.5);
+  border: 5px solid rgb(179, 0, 0);
+  color: #ffffff;
 }
 
-.main-nav .blue.nav-link:hover, 
+.main-nav .blue.nav-link:hover,
 .blueDiv {
-    border: 5px solid #000099;
-    background-color: rgba(0, 0, 153, .4);
-    color: #ffffff;
+  border: 5px solid #000099;
+  background-color: rgba(0, 0, 153, 0.5);
+  color: #ffffff;
 }
 
-.main-nav .yellow.nav-link:hover, 
-.yellowDiv{
-    background-color: rgba(204, 163, 0, .6);
-    border: 5px solid rgb(204, 163, 0);
-    color: #ffffff;
+.main-nav .yellow.nav-link:hover,
+.yellowDiv {
+  background-color: rgba(204, 163, 0, 0.7);
+  border: 5px solid rgb(204, 163, 0);
+  color: #ffffff;
 }
 
 .main-nav .icon {
-    display: block;
+  display: block;
 }
 
 .main-nav .fa-bars {
-    color: #800000;
+  color: #800000;
 }
 
 .nav-menu-toggle {
-    display: none;
+  display: none;
 }
 
 .nav-menu-toggle.responsive {
-    display: block;
+  display: block;
 }
-
 
 /* LandingPage styling */
 
 .LandingPage {
-    background-image: url('./images/steve-johnson-709266-unsplash.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
+  background-image: url('./images/steve-johnson-709266-unsplash.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
 }
 
 .LandingPage-container {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
 
 .LandingPage--img-container {
-    width: 250px;
-    margin-top: 1em;
-    margin: auto;
+  width: 250px;
+  margin-top: 1em;
+  margin: auto;
 }
 
-.LandingPage--img-container:hover, 
-.About--text-top:hover,
+.LandingPage--img-container:hover,
 .Contact-div:hover {
-    animation: redDiv 1s;
-    animation-fill-mode: forwards;
+  animation: redDiv 1s;
+  animation-fill-mode: forwards;
 }
 
 .LandingPage--img-container img {
-    width: 100%;
+  width: 100%;
 }
 
 .LandingPage-intro-container {
-    grid-column: 1 / 1;
-    text-align: right;
-    padding: 1em;
-    margin: 1em;
+  grid-column: 1 / 1;
+  text-align: right;
+  padding: 1em;
+  margin: 1em;
 }
 
-.LandingPage-intro-container:hover, 
-.About--text-right:hover,
+.LandingPage-intro-container:hover,
 .Contact-ad:hover {
-    animation: blueDiv 1s;
-    animation-fill-mode: forwards;
+  animation: blueDiv 1s;
+  animation-fill-mode: forwards;
 }
 
-.LandingPage-subheader, 
+.LandingPage-subheader,
 .LandingPage-paragraph {
-    font-size: 1em;
-    font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1em;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .LandingPage-btn {
-    cursor: pointer;
-    margin: auto;
-    padding: 15px 32px;
-    font-size: 24px;
-    text-decoration: none;
+  cursor: pointer;
+  margin: auto;
+  padding: 15px 32px;
+  font-size: 24px;
+  text-decoration: none;
 }
-.LandingPage-btn:hover, 
-.About--text-left:hover {
-    animation: yellowDiv 1s;
-    animation-fill-mode: forwards;
+
+.LandingPage-btn:hover {
+  animation: yellowDiv 1s;
+  animation-fill-mode: forwards;
 }
 
 /* About Page */
 .About {
-    min-height: 100vh;
-    background-color: #F2EFEB;
+  min-height: 100vh;
+  background-color: #f2efeb;
 }
 
 .About--img-container {
-   width: 100%;
+  width: 100%;
 }
 
-.About--img-container img{
-    width: 100%;
- }
+.About--img-container img {
+  width: 100%;
+}
 
-.About--text-top, 
-.About--text-left, 
+.About--text-top,
+.About--text-left,
 .About--text-right {
-    padding: 1em;
+  padding: 1em;
 }
 
 .Art {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 1em; 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
 }
 
 .Art-img {
-    width: 90%;
-    padding: 1em;
-    display: flex;
-    align-items: center;
+  width: 90%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
 }
-.Art-img img{
-    width: 100%;
+
+.Art-img img {
+  width: 100%;
 }
 
 /* Contact Page styling */
 
 .Contact {
-    background-image: url(./images/steve-johnson-1208417-unsplash.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    width: 100%;
-    height: 100vh;
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 1em;
-    padding-top: 1em;
+  background-image: url(./images/steve-johnson-1208417-unsplash.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  padding-top: 1em;
 }
 
-.Contact-header, 
+.Contact-header,
 .Contact-info,
-.Contact-ad-info{
-    text-align: center;
-    min-width: 100%;
+.Contact-ad-info {
+  text-align: center;
+  min-width: 100%;
 }
 
 .Contact-link:link,
 .Contact-link:visited {
-    color: #ffffff;
-} 
-
+  color: #ffffff;
+}
 
 /* Responsive Media Queries*/
 @media screen and (min-width: 768px) {
-    /* Navbar styling */
-    .main-nav ul li {
-        display: inline;
-    }
 
-    .main-nav .icon {
-        display: none;
-    }
+  /* Navbar styling */
+  .main-nav ul li {
+    display: inline;
+  }
 
-    .nav-menu-toggle {
-        display: block;
-    }
+  .main-nav .icon {
+    display: none;
+  }
 
-    /* Landing Page styling */
-    .LandingPage--img-container {
-        width: 500px;
-        margin: auto;
-    }
+  .nav-menu-toggle {
+    display: block;
+  }
 
-    /* About Page Styling */
-    
-    /* Art Page Styling */
-    .Art {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        grid-gap: 1em; 
-    }
+  /* Landing Page styling */
+  .LandingPage--img-container {
+    width: 500px;
+    margin: auto;
+  }
+
+  /* About Page Styling */
+
+  /* Art Page Styling */
+  .Art {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1em;
+  }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
 
-     /* LandingPage styling */
-     .LandingPage-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
-    }
+  /* LandingPage styling */
+  .LandingPage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
 
-    .LandingPage--img-container {
-        grid-column: 1 / 2;
-        width: 280px;
-        margin: auto;
-    }
+  .LandingPage--img-container {
+    grid-column: 1 / 2;
+    width: 280px;
+    margin: auto;
+  }
 
-    .LandingPage-intro-container {
-        grid-column: 2 / 4;
-    }
+  .LandingPage-intro-container {
+    grid-column: 2 / 4;
+  }
 
-    .LandingPage-header {
-        margin-top: 10%;
-    }
+  .LandingPage-header {
+    margin-top: 10%;
+  }
 
-    .LandingPage-btn{
-        grid-column: 2 / 3;
-        font-size: 36px;
-        margin-top: 1em;
-    }
+  .LandingPage-btn {
+    grid-column: 2 / 3;
+    font-size: 36px;
+    margin-top: 1em;
+  }
 
-    /* About Page styling */
-    .About--img-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-row: 1em;
-     }
+  /* About Page styling */
+  .About--img-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row: 1em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    ;
+  }
 
-     .About--img-container img {
-         grid-column: 2 / 5;
-         grid-row: 2 / 4;
-     }
-     
-     .About--text-top {
-         grid-column: 1 / 6;
-         font-size: 1.5em;
-     }
+  .About--img-container img {
+    grid-column: 4 / 6;
+    grid-row: 1 / 2;
+  }
 
-     .About--text-right {
-        grid-column: 1 / 2;
-        grid-row: 2 / 4;
-        font-size: 1.5em;
-     }
+  .About--text-top {
+    grid-column: 1 / 6;
+    font-size: 1.5em;
+  }
 
-     .About--text-left {
-        grid-column: 5 / 6;
-        grid-row: 2 / 4;
-        font-size: 1.5em;
-     }
+  .About--text-left {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+  }
 
-     /* Contact Page Styling */
-     .Contact {
-         grid-template-columns: 1fr 1fr;
-         grid-template-rows: auto auto;
-     }
-
-     .Contact-div {
-         grid-column: 2 / 3;
-         grid-row: 2 / 3;
-     }
-
-     .Contact-ad {
-         grid-column: 1 / 2;
-     }
+  .About--text-right {
+    grid-column: 3 / 6;
+    grid-row: 4 / 6;
+    font-size: 1.5em;
+  }
 }
 
-@media screen and (min-width: 1125px){
-    .About--text-top, 
+@media screen and (min-width: 1125px) {
+  /* .About--text-top, 
     .About--text-left,
     .About--text-right {
         font-size: 1.3987498em;
-    }
+    } */
+
+  /* Contact Page Styling */
+  .Contact {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .Contact-div {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .Contact-ad {
+    grid-column: 1 / 2;
+  }
 }
 
 /* Animations */
 @keyframes yellowDiv {
-    from {background-color: rgba(204, 163, 0, .6);}
-    to {background-color: rgb(204, 163, 0);}
+  from {
+    background-color: rgba(204, 163, 0, 0.7);
+  }
+
+  to {
+    background-color: rgb(204, 163, 0);
+  }
 }
 
 @keyframes blueDiv {
-    from {background-color: rgba(0, 0, 153, .4);}
-    to {background-color: rgb(0, 0, 153);}
+  from {
+    background-color: rgba(0, 0, 153, 0.5);
+  }
+
+  to {
+    background-color: rgb(0, 0, 153);
+  }
 }
 
 @keyframes redDiv {
-    from {background-color: rgba(179, 0, 0, .3);}
-    to {background-color: rgb(179, 0, 0);}
+  from {
+    background-color: rgba(179, 0, 0, 0.5);
+  }
+
+  to {
+    background-color: rgb(179, 0, 0);
+  }
 }
