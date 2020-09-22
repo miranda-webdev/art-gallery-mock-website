@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 
 import Home from '../pages/Home';
+import Events from '../pages/Events'
 import About from '../pages/About';
 import ContactUs from '../pages/Contact';
 
@@ -111,11 +112,16 @@ import ContactUs from '../pages/Contact';
                         </Link>
                     </ListItem>
                     <ListItem key = {2} button divider>
+                        <Link component={RouterLink} variant="button" to="/events" color="textPrimary" aria-label="Events" className={this.props.classes.link}>
+                        Events
+                        </Link>
+                    </ListItem>
+                    <ListItem key = {3} button divider>
                         <Link component={RouterLink} variant="button" to="/about-us" color="textPrimary" aria-label="About Us" className={this.props.classes.link}>
                         About Us
                         </Link>
                     </ListItem>
-                    <ListItem key = {3} button divider>
+                    <ListItem key = {4} button divider>
                         <Link component={RouterLink} variant="button" to="/contact-us" color="textPrimary" aria-label="Contact Us" className={this.props.classes.link}>
                         Contact Us
                         </Link>
@@ -124,8 +130,9 @@ import ContactUs from '../pages/Contact';
             </div>
           </SwipeableDrawer>
           <Route path="/" exact component={Home}/>
+          <Route path="/events/" component={Events} />
           <Route path="/about-us/" component={About} />
-          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/contact-us/" component={ContactUs} />
         </Router>
         </div>
       );
@@ -144,18 +151,22 @@ import ContactUs from '../pages/Contact';
               <Link component={RouterLink} variant="button" to="/" color="textPrimary" aria-label="Home" className={this.props.classes.link}>
                 Home
               </Link>
-              <Link component={RouterLink} variant="button" to="/about-us" color="textPrimary" aria-label="About Us" className={this.props.classes.link}>
+              <Link component={RouterLink} variant="button" to="/events/" color="textPrimary" aria-label="Events" className={this.props.classes.link}>
+                Events
+              </Link>
+              <Link component={RouterLink} variant="button" to="/about-us/" color="textPrimary" aria-label="About Us" className={this.props.classes.link}>
                 About Us
               </Link>
-              <Link component={RouterLink} variant="button" to="/contact-us" color="textPrimary" aria-label="Contact Us" className={this.props.classes.link}>
+              <Link component={RouterLink} variant="button" to="/contact-us/" color="textPrimary" aria-label="Contact Us" className={this.props.classes.link}>
                 Contact Us
               </Link>
             </nav>
           </Toolbar>
         </AppBar>
         <Route path="/" exact component={Home} />
+        <Route path="/events/" component={Events} />
         <Route path="/about-us/" component={About} />
-        <Route path="/contact-us" component={ContactUs} />
+        <Route path="/contact-us/" component={ContactUs} />
       </Router>
       )
     }

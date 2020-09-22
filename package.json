@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/miranda-webdev/art-gallery-mock-website#readme",
   "dependencies": {
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
-    "nodemon": "^1.19.0"
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
   }
 }
