@@ -9,7 +9,6 @@ import {
 import Home from '../pages/Home';
 import Events from '../pages/Events'
 import About from '../pages/About';
-import ContactUs from '../pages/Contact';
 
 
   const styleSheet = {
@@ -121,18 +120,12 @@ import ContactUs from '../pages/Contact';
                         About Us
                         </Link>
                     </ListItem>
-                    <ListItem key = {4} button divider>
-                        <Link component={RouterLink} variant="button" to="/contact-us" color="textPrimary" aria-label="Contact Us" className={this.props.classes.link}>
-                        Contact Us
-                        </Link>
-                    </ListItem>
                 </List>
             </div>
           </SwipeableDrawer>
           <Route path="/" exact component={Home}/>
           <Route path="/events/" component={Events} />
           <Route path="/about-us/" component={About} />
-          <Route path="/contact-us/" component={ContactUs} />
         </Router>
         </div>
       );
@@ -157,16 +150,12 @@ import ContactUs from '../pages/Contact';
               <Link component={RouterLink} variant="button" to="/about-us/" color="textPrimary" aria-label="About Us" className={this.props.classes.link}>
                 About Us
               </Link>
-              <Link component={RouterLink} variant="button" to="/contact-us/" color="textPrimary" aria-label="Contact Us" className={this.props.classes.link}>
-                Contact Us
-              </Link>
             </nav>
           </Toolbar>
         </AppBar>
         <Route path="/" exact component={Home} />
         <Route path="/events/" component={Events} />
         <Route path="/about-us/" component={About} />
-        <Route path="/contact-us/" component={ContactUs} />
       </Router>
       )
     }
