@@ -15,6 +15,7 @@ import About from '../pages/About';
     '@global': {
       body: {
         backgroundColor: "white",
+        margin: 0
       },
       ul: {
         margin: 0,

@@ -10,10 +10,11 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     main : {
-        width: '100vw',
+        width: '100%',
         height: 'auto',
         backgroundColor: 'orange',
         padding: '15px',
+        margin: 0
     } 
 
 }));

@@ -7,8 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   App : {
     boxSizing: 'border-box',
-    width: '100vw',
-    height: '100vh'
+    // width: '98%'
   }
 }));
 
