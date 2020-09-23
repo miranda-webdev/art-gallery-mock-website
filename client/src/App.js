@@ -6,8 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   App : {
-    height: '100vh',
-    width: '100vw'
+    boxSizing: 'border-box',
+    width: '100vw',
+    height: '100vh'
   }
 }));
 
