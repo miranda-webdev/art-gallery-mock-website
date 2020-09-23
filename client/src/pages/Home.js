@@ -65,7 +65,7 @@ function Home(){
                 </div>
             </Link>
             
-            <Grid className={classes.events} container direction="row" justify="space-between" alignItems="stretch" spacing={0}>
+            <Grid className={classes.events} container direction="row" justify="space-between" spacing={0}>
                 <Grid item  xs={12} lg={12}><Typography variant="h3">Upcoming Events</Typography></Grid>
                 <Grid item xs={12} lg={3}>
                     <Card className={classes.cardStyles}>

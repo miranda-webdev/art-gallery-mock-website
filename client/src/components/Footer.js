@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     main : {
@@ -46,7 +48,15 @@ function Footer () {
             </Grid>
             <div>
                 <Typography variant="h5">Sign up for our newsletter</Typography>
-                <label>Email: </label><input type="text"/>
+                <form >
+                    <TextField 
+                        
+                        required id="standard-required" label="First Name"/>
+                     <TextField 
+                     
+                     required id="standard-required" label="Email"/>
+                     <Button variant="contained" color="primary" >JOIN!</Button>
+                </form>
             </div>
         </div>
     )
