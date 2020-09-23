@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 function Home(){
     const classes = useStyles();
     return(
-        <Grid container direction="column" justify="space-between" alignItems="center">
+        <Grid container direction="column" alignItems="center">
             <Link component={RouterLink} variant="button" to="/events/" color="textPrimary" aria-label="Main Event">
                 <div className={classes.container}>
                     <img className={classes.style} alt="" src={require('../images/steve-johnson-1150048-unsplash.jpg')}/>
@@ -46,14 +46,14 @@ function Home(){
                 </div>
             </Link>
             
-                <Grid container direction="row" justify="space-between" alignItems="center" spacing={5}>
-                    <Grid item xs={12}><Typography variant="h3">Upcoming Events</Typography></Grid>
-                    <Grid item xs className={classes.event}>Upcoming Event</Grid>
-                    <Grid item xs className={classes.event}>Upcoming Event</Grid>
+            <Grid container direction="row" justify="space-between" alignItems="stretch" spacing={0}>
+                <Grid item xs={12}><Typography variant="h3">Upcoming Events</Typography></Grid>
+                <Grid item xs={12} lg={3} className={classes.event}>Upcoming Event</Grid>
+                <Grid item xs={12} lg={3} className={classes.event}>Upcoming Event</Grid>
 
-                    <Grid item xs className={classes.event}><Link component={RouterLink} variant="button" to="/events/" color="textPrimary" aria-label="More Events">View More Events</Link>
-                    </Grid>
+                <Grid item xs={12} lg={3} className={classes.event}><Link component={RouterLink} variant="button" to="/events/" color="textPrimary" aria-label="More Events">View More Events</Link>
                 </Grid>
+            </Grid>
         </Grid>
     )
 }
