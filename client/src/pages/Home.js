@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         height: 'auto',
         opacity : .85
     },
-    textStyle: {
+    imgTextStyle: {
         fontWeight: 'bold',
         position: 'absolute',
         top: '50%',
@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         opacity: 1
     },
+    textStyles : {
+        textAlign: 'center',
+        margin: '1rem'
+    }
   }));
 
 function Home(){
@@ -46,13 +50,13 @@ function Home(){
             <Link component={RouterLink} variant="button" to="/events/" color="textPrimary" aria-label="Main Event">
                 <div className={classes.containerImg}>
                     <img className={classes.styleImg} alt="" src={require('../images/steve-johnson-1150048-unsplash.jpg')}/>
-                    <Typography variant="h2" className={classes.textStyle}>Limited Time Gallery</Typography>
+                    <Typography variant="h2" className={classes.imgTextStyle}>Limited Time Gallery</Typography>
                 </div>
             </Link>
             
-            <Grid className={classes.events} container zeroMinWidth direction="row" justify="space-between" spacing={0}>
+            <Grid className={classes.events} container direction="row" justify="space-between" spacing={0}>
                 <Grid item zeroMinWidth xs={12} lg={12}>
-                    <Typography variant="h3">Upcoming Events</Typography>
+                    <Typography variant="h3" className={classes.textStyles}>Upcoming Events</Typography>
                 </Grid>
                 <Grid item zeroMinWidth xs={12} lg={3}>
                     <Event />
