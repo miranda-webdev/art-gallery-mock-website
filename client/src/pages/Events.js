@@ -18,15 +18,13 @@ function Events () {
         // const [data, setData] = useState({ events: [] });
 
         async function getData() {
-            await axios({
-                method: "GET",
-                url: '/api/events',
-              })
-                .then((response)=> {
-                    console.log(response)
-                }).catch((err) => {
-                    console.log(err)
-                });
+            try {
+                const eventsDB = await axios.get('http://localhost:5000/api/events');
+                console.log(eventsDB.data);
+            } catch (e) {
+                console.error(e)
+            }
+
         }
 
         try{

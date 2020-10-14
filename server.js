@@ -1,42 +1,47 @@
 const express = require('express');
 const path = require("path");
 const app = express();
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-const {MongoClient} = require('mongodb');
-const uri = require('./db');
-const instance = new MongoClient(uri.uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
 const port = process.env.PORT || 5000;
 
-app.use('/api/events', createProxyMiddleware({ 
-  target: 'http://localhost:5000/', 
-  changeOrigin: true, 
-  pathRewrite: {'^/api/events' : ''} 
-}));
+const { MongoClient } = require('mongodb');
+const uri = require('./db').uri;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-try {
-  // Connect to the MongoDB cluster
-  instance.connect((err, client) => {
-    console.log('Connected to database');
+// allow cors
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
-    const eventsdb = client.db('events').collection('events')
-              .find({type: 'event'}).sort({eventDate: 1}).toArray();
-    eventsdb.then( result => {
-      app.get('/api/events', (req, res) => {
-        // res.send({events: 'arrived at events db'});
-        // console.log(result);
-        res.send(result)
-      });
-    });
-  });
+// GET /api/events
+async function loadEventsDB() {
+  const eventsDB = client.db("events").collection("events");
 
-} catch (e) {
-  console.error(e);
-} finally {
-  instance.close();
+  const result = await eventsDB.find({}).sort({eventDate: 1}).toArray();
+
+  app.get('/api/events', (req, res) => {
+    res.send(result);
+  })
 }
+
+async function main(){
+  try {
+    //connect to database
+    await client.connect();
+  
+    //load events from db
+    await loadEventsDB();
+  
+  } catch (e) {
+    console.error(e);
+  } finally {
+    await client.close();
+  }
+}
+
+main().catch(console.error);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
