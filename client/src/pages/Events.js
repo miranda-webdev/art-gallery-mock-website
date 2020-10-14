@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Event from '../components/Event';
+
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     textStyles : {
@@ -12,34 +14,58 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Events() {
-    const classes = useStyles();
+function Events () {
+        // const [data, setData] = useState({ events: [] });
 
-    return ( 
-    <div className = "Events" >
-        <Typography variant="h2" className={classes.textStyles}>Events</Typography>
-        <Grid container direction="row" justify="space-between" >
-            <Grid item xs={12} lg={4}>
-               <Event />
-            </Grid>
-            <Grid item xs={12} lg={4}>
+        async function getData() {
+            await axios({
+                method: "GET",
+                url: '/api/events',
+              })
+                .then((response)=> {
+                    console.log(response)
+                }).catch((err) => {
+                    console.log(err)
+                });
+        }
+
+        try{
+            useEffect(() => {
+                getData()
+            }, []);
+        }catch(err){
+            console.log(err)
+        }
+        
+
+        const classes = useStyles();
+
+        return ( 
+        <div className = "Events" >
+            <Typography variant="h2" className={classes.textStyles}>Events</Typography>
+            <Grid container direction="row" justify="space-between" >
+                <Grid item xs={12} lg={4}>
                 <Event />
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Event />
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Event />
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Event />
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Event />
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Event />
+                </Grid>
             </Grid>
-            <Grid item xs={12} lg={4}>
-                <Event />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-                <Event />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-                <Event />
-            </Grid>
-            <Grid item xs={12} lg={4}>
-                <Event />
-            </Grid>
-        </Grid>
-    </div>
-    )
+        </div>
+        )
+    
 }
 
 export default Events;
