@@ -21,6 +21,8 @@ async function loadEventsDB() {
 
   const result = await eventsDB.find({}).sort({eventDate: 1}).toArray();
 
+  // @TODO
+  // API not loading properly, see client/src/pages/events.js
   app.get('/api/events', (req, res) => {
     res.send(result);
   })
@@ -30,6 +32,7 @@ async function main(){
   try {
     //connect to database
     await client.connect();
+    console.log("connected to database")
   
     //load events from db
     await loadEventsDB();

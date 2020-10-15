@@ -14,56 +14,74 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+// @TODO
+/*
+EVENTS is rerendering twice before and after data is loaded - bug
+API cannot be found upon first load of site, needs to be refreshed to connect properly - bug
+    fetch() has similar problem, server side issue
+*/
+
 function Events () {
-        // const [data, setData] = useState({ events: [] });
-
-        async function getData() {
-            try {
-                const eventsDB = await axios.get('http://localhost:5000/api/events');
-                console.log(eventsDB.data);
-            } catch (e) {
-                console.error(e)
-            }
-
-        }
-
-        try{
-            useEffect(() => {
-                getData()
-            }, []);
-        }catch(err){
-            console.log(err)
-        }
-        
-
+        //using styling
         const classes = useStyles();
 
-        return ( 
-        <div className = "Events" >
-            <Typography variant="h2" className={classes.textStyles}>Events</Typography>
-            <Grid container direction="row" justify="space-between" >
-                <Grid item xs={12} lg={4}>
-                <Event />
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12} lg={4}>
-                    <Event />
-                </Grid>
-            </Grid>
-        </div>
-        )
-    
+        //state
+        const [data, setData] = useState([]);
+        const [isLoading, setIsLoading] = useState(false);
+
+        useEffect(() => {
+            const getData = async () => {   
+                setIsLoading(true);
+
+                //fetch
+                await axios.get('http://localhost:5000/api/events')
+                .then((res) => {
+                    setData(res.data);
+                })
+                    
+            
+
+                setIsLoading(false);
+            }
+
+            //update previous state
+            getData()
+        },[]);
+
+        console.log(data) //shows in console empty twice and with data twice
+            return ( 
+                <div className = "Events" >
+                    <Typography variant="h2" className={classes.textStyles}>Events</Typography>
+                    
+                        {/* {data.events.map(event => {
+                            <Grid item xs={12} lg={4}>
+                                <Event key={event._id} event={event}/>
+                            </Grid>
+                            
+                        })} */}
+                        {isLoading ? (
+                            <Typography variant="h3" className={classes.textStyles}>Loading...</Typography>
+                        ) : (
+                            <Grid container direction="row" justify="space-between" >
+                                <Grid item xs={12} lg={4}>
+                                    <Event />
+                                </Grid>
+                                <Grid item xs={12} lg={4}>
+                                    <Event />
+                                </Grid>
+                                <Grid item xs={12} lg={4}>
+                                    <Event />
+                                </Grid>
+                                <Grid item xs={12} lg={4}>
+                                    <Event />
+                                </Grid>
+                                <Grid item xs={12} lg={4}>
+                                    <Event />
+                                </Grid>
+                            </Grid>
+                        )}
+                </div>
+                )
 }
 
 export default Events;

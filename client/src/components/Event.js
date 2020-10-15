@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function Event () {
+function Event (event) {
     const classes = useStyles();
 
     return (
@@ -34,7 +34,7 @@ function Event () {
                     image={require('../images/photo-1513364776144-60967b0f800f.jpg')}
                     title="Event"/>
                 <CardContent>
-                    <Typography variant="h5">Event - date</Typography>
+                    <Typography variant="h5">{event.eventName} - {event.eventDate}</Typography>
                     <Typography variant="body1">Art related things are happening at the Art Gallery</Typography>
                 </CardContent>
             </CardActionArea>
