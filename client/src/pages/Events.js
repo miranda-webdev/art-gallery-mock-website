@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
 /*
 EVENTS is rerendering twice before and after data is loaded - bug
 API cannot be found upon first load of site, needs to be refreshed to connect properly - bug
-    fetch() has similar problem, server side issue
+    fetch() has similar problem, server side issue?
+also renders console.log from the home page once
 */
 
 function Events () {
@@ -30,25 +31,39 @@ function Events () {
         const [isLoading, setIsLoading] = useState(false);
 
         useEffect(() => {
-            const getData = async () => {   
-                setIsLoading(true);
-
-                //fetch
-                await axios.get('http://localhost:5000/api/events')
-                .then((res) => {
-                    setData(res.data);
-                })
-                    
-            
-
-                setIsLoading(false);
-            }
-
-            //update previous state
+            console.log('Inside useEffect, but before getData is called')
             getData()
+            console.log('Inside useEffect, but after getData is called')
+
+            return console.log('clean up')
         },[]);
 
-        console.log(data) //shows in console empty twice and with data twice
+        const getData = async () => {   
+            console.log('getData called')
+            setIsLoading(true);
+
+            //fetch
+            await axios.get('http://localhost:5000/api/events')
+            .then((res) => {
+                
+                setData(res.data);
+                console.log('get request successful')
+            })
+            .catch (err => {
+                if (err.response) {
+                    console.log(err.response)
+                } else if (err.request) {
+                    console.log(err.request)
+                } else {
+                    console.error(err);
+                }
+            });
+            setIsLoading(false);
+        }
+
+        console.log(`Outside useEffect`) //shows in console empty twice and with data twice
+        //possibly one for every DidMount and DidUpdate?
+
             return ( 
                 <div className = "Events" >
                     <Typography variant="h2" className={classes.textStyles}>Events</Typography>
