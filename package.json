@@ -25,7 +25,7 @@
   "homepage": "https://github.com/miranda-webdev/art-gallery-mock-website#readme",
   "dependencies": {
     "concurrently": "^4.1.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.6.2",
     "nodemon": "^1.19.4"
   },
